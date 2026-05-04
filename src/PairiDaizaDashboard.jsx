@@ -1,3 +1,4 @@
+import './PairiDaizaDashboard.css';
 import React, { useMemo, useState } from 'react';
 import {
   Bar,
@@ -250,25 +251,6 @@ export default function PairiDaizaDashboard() {
         </section>
       )}
 
-      <style jsx>{`
-        .dashboard { font-family: Inter, system-ui, sans-serif; color: #213429; background: #f7f3ea; min-height: 100vh; padding: 20px; }
-        .header { background: linear-gradient(135deg,#1f4d36,#3c6650); color: #fff; border-radius: 16px; padding: 24px; display:flex; justify-content:space-between; align-items:center; }
-        .header h1 { margin:0; font-size: clamp(1.4rem,3vw,2rem); }
-        .header p { margin:4px 0 0; opacity:.95; }
-        .disclaimer { margin-top: 16px; background:#efe5d3; border-left:4px solid #9b7a3c; padding:12px; border-radius:12px; display:flex; gap:10px; }
-        .tabs { display:flex; flex-wrap:wrap; gap:8px; margin:18px 0; }
-        .tabs button { border:1px solid #d8ccb8; background:#fff; padding:9px 12px; border-radius:999px; cursor:pointer; }
-        .tabs .active { background:#1f4d36; color:#fff; }
-        .kpi-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:14px; }
-        .card, .panel, .table-wrap { background:#fff; border-radius:14px; padding:16px; }
-        .row { display:flex; justify-content:space-between; gap:8px; align-items:center; }
-        .badge { color:#fff; border-radius:999px; padding:4px 10px; font-size:.75rem; text-transform:uppercase; }
-        .kpi-inline { display:grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr)); gap:10px; margin-bottom:12px; }
-        .geo { display:grid; grid-template-columns: 1fr 1fr; gap:14px; align-items:center; }
-        table { width:100%; border-collapse:collapse; font-size:.92rem; }
-        th, td { text-align:left; border-bottom:1px solid #eee3d2; padding:10px 8px; vertical-align:top; }
-        @media (max-width: 900px) { .geo { grid-template-columns: 1fr; } }
-      `}</style>
     </div>
   );
 }
