@@ -1,0 +1,44 @@
+:root {
+  --forest: #1f4d36;
+  --forest-soft: #3c6650;
+  --sage: #5c7b66;
+  --sand: #f7f3ea;
+  --paper: #fff;
+  --gold: #b08d57;
+  --earth: #7b5c44;
+  --text: #213429;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--sand); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
+.dashboard { min-height: 100vh; padding: 20px; }
+.header { background: linear-gradient(135deg,var(--forest),var(--forest-soft)); color: #fff; border-radius: 16px; padding: 24px; display:flex; justify-content:space-between; align-items:center; }
+.header h1 { margin:0; font-size: clamp(1.4rem,3vw,2rem); }
+.header p { margin:4px 0 0; opacity:.95; }
+.disclaimer { margin-top: 16px; background:#efe5d3; border-left:4px solid #9b7a3c; padding:12px; border-radius:12px; display:flex; gap:10px; }
+.tabs { display:flex; flex-wrap:wrap; gap:8px; margin:18px 0; }
+.tabs button { border:1px solid #d8ccb8; background:#fff; color:var(--text); padding:9px 12px; border-radius:999px; cursor:pointer; transition:.2s; }
+.tabs button:hover { border-color: var(--sage); }
+.tabs .active { background:var(--forest); color:#fff; border-color:var(--forest); }
+.kpi-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:14px; }
+.card, .panel, .table-wrap { background:var(--paper); border-radius:14px; padding:16px; box-shadow: 0 4px 16px rgba(31,77,54,0.05); }
+.row { display:flex; justify-content:space-between; gap:8px; align-items:center; }
+.badge { color:#fff; border-radius:999px; padding:4px 10px; font-size:.75rem; text-transform:uppercase; }
+.kpi-inline { display:grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr)); gap:10px; margin-bottom:12px; }
+.geo { display:grid; grid-template-columns: 1fr 1fr; gap:14px; align-items:center; }
+
+h2 { margin:0 0 12px; display:flex; align-items:center; gap:8px; }
+h3 { margin:0 0 8px; }
+p { margin:8px 0; }
+
+ul { margin: 8px 0 0 20px; }
+li { margin-bottom: 8px; }
+
+table { width:100%; border-collapse:collapse; font-size:.92rem; }
+th, td { text-align:left; border-bottom:1px solid #eee3d2; padding:10px 8px; vertical-align:top; }
+thead th { color: var(--forest); }
+
+@media (max-width: 900px) {
+  .geo { grid-template-columns: 1fr; }
+}
