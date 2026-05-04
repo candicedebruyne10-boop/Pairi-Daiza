@@ -1,3 +1,4 @@
+import './PairiDaizaDashboard.css';
 import React, { useMemo, useState } from 'react';
 import {
   Bar,
@@ -144,7 +145,7 @@ export default function PairiDaizaDashboard() {
             <article key={kpi.title} className="card">
               <div className="row">
                 <h3>{kpi.title}</h3>
-                <span className="badge" style={{ background: STATUS_COLORS[kpi.status] }}>{kpi.status}</span>
+                <span className={`badge status-${kpi.status}`} style={{ background: STATUS_COLORS[kpi.status] }}>{kpi.status}</span>
               </div>
               <strong>{kpi.value}</strong>
               <p>{kpi.insight}</p>
@@ -169,8 +170,8 @@ export default function PairiDaizaDashboard() {
               <YAxis yAxisId="right" orientation="right" />
               <Tooltip />
               <Legend />
-              <Bar yAxisId="left" dataKey="marginPerVisitor" fill="#2e5a3f" name="Marge €/visiteur" />
-              <Line yAxisId="right" dataKey="totalMarginM" stroke="#b08d57" name="Marge totale (M€)" />
+              <Bar yAxisId="left" dataKey="marginPerVisitor" fill="#3d664e" name="Marge €/visiteur" />
+              <Line yAxisId="right" dataKey="totalMarginM" stroke="#8f7446" name="Marge totale (M€)" />
             </BarChart>
           </ResponsiveContainer>
         </section>
@@ -210,7 +211,7 @@ export default function PairiDaizaDashboard() {
             <ResponsiveContainer width="100%" height={280}>
               <PieChart>
                 <Pie data={marketData} dataKey="share" nameKey="country" outerRadius={92} label>
-                  {marketData.map((_, i) => <Cell key={i} fill={['#1f4d36','#355f47','#5c7b66','#7e8f73','#a38e6b','#b7a98e'][i]} />)}
+                  {marketData.map((_, i) => <Cell key={i} fill={['#1f4d36','#355f47','#6a836f','#8c997f','#9a845f','#bfae96'][i]} />)}
                 </Pie>
                 <Tooltip />
               </PieChart>
@@ -250,25 +251,6 @@ export default function PairiDaizaDashboard() {
         </section>
       )}
 
-      <style jsx>{`
-        .dashboard { font-family: Inter, system-ui, sans-serif; color: #213429; background: #f7f3ea; min-height: 100vh; padding: 20px; }
-        .header { background: linear-gradient(135deg,#1f4d36,#3c6650); color: #fff; border-radius: 16px; padding: 24px; display:flex; justify-content:space-between; align-items:center; }
-        .header h1 { margin:0; font-size: clamp(1.4rem,3vw,2rem); }
-        .header p { margin:4px 0 0; opacity:.95; }
-        .disclaimer { margin-top: 16px; background:#efe5d3; border-left:4px solid #9b7a3c; padding:12px; border-radius:12px; display:flex; gap:10px; }
-        .tabs { display:flex; flex-wrap:wrap; gap:8px; margin:18px 0; }
-        .tabs button { border:1px solid #d8ccb8; background:#fff; padding:9px 12px; border-radius:999px; cursor:pointer; }
-        .tabs .active { background:#1f4d36; color:#fff; }
-        .kpi-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:14px; }
-        .card, .panel, .table-wrap { background:#fff; border-radius:14px; padding:16px; }
-        .row { display:flex; justify-content:space-between; gap:8px; align-items:center; }
-        .badge { color:#fff; border-radius:999px; padding:4px 10px; font-size:.75rem; text-transform:uppercase; }
-        .kpi-inline { display:grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr)); gap:10px; margin-bottom:12px; }
-        .geo { display:grid; grid-template-columns: 1fr 1fr; gap:14px; align-items:center; }
-        table { width:100%; border-collapse:collapse; font-size:.92rem; }
-        th, td { text-align:left; border-bottom:1px solid #eee3d2; padding:10px 8px; vertical-align:top; }
-        @media (max-width: 900px) { .geo { grid-template-columns: 1fr; } }
-      `}</style>
     </div>
   );
 }
