@@ -145,7 +145,7 @@ export default function PairiDaizaDashboard() {
             <article key={kpi.title} className="card">
               <div className="row">
                 <h3>{kpi.title}</h3>
-                <span className={`badge status-${kpi.status}`} style={{ background: STATUS_COLORS[kpi.status] }}>{kpi.status}</span>
+                <span className="badge" style={{ background: STATUS_COLORS[kpi.status] }}>{kpi.status}</span>
               </div>
               <strong>{kpi.value}</strong>
               <p>{kpi.insight}</p>
@@ -170,8 +170,8 @@ export default function PairiDaizaDashboard() {
               <YAxis yAxisId="right" orientation="right" />
               <Tooltip />
               <Legend />
-              <Bar yAxisId="left" dataKey="marginPerVisitor" fill="#3d664e" name="Marge €/visiteur" />
-              <Line yAxisId="right" dataKey="totalMarginM" stroke="#8f7446" name="Marge totale (M€)" />
+              <Bar yAxisId="left" dataKey="marginPerVisitor" fill="#2e5a3f" name="Marge €/visiteur" />
+              <Line yAxisId="right" dataKey="totalMarginM" stroke="#b08d57" name="Marge totale (M€)" />
             </BarChart>
           </ResponsiveContainer>
         </section>
@@ -211,7 +211,7 @@ export default function PairiDaizaDashboard() {
             <ResponsiveContainer width="100%" height={280}>
               <PieChart>
                 <Pie data={marketData} dataKey="share" nameKey="country" outerRadius={92} label>
-                  {marketData.map((_, i) => <Cell key={i} fill={['#1f4d36','#355f47','#6a836f','#8c997f','#9a845f','#bfae96'][i]} />)}
+                  {marketData.map((_, i) => <Cell key={i} fill={['#1f4d36','#355f47','#5c7b66','#7e8f73','#a38e6b','#b7a98e'][i]} />)}
                 </Pie>
                 <Tooltip />
               </PieChart>
